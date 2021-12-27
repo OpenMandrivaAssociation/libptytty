@@ -25,6 +25,11 @@ Libptytty is written in C++, but it also offers a C-only API.
 Summary:	libptytty is a small library that offers pseudo-tty management in an OS-independent way.
 Group:		System/Libraries
 
+%description
+libptytty is a small library that offers pseudo-tty management in an OS-independent way.
+It also offers session database support (utmp and optional wtmp/lastlog updates for login shells) 
+and supports fork'ing after startup and dropping privileges in the calling process.  
+Libptytty is written in C++, but it also offers a C-only API.
 
 %package -n %{devpackage}
 Summary:	Development files for libptytty
