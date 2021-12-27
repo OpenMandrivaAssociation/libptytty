@@ -1,3 +1,7 @@
+%define major 0
+%define libpackage %mklibname ptytty %{major}
+%define devpackage %mklibname -d ptytty
+
 Name: libptytty
 Version: 2.0
 Release: 1
@@ -17,12 +21,18 @@ It also offers session database support (utmp and optional wtmp/lastlog updates 
 and supports fork'ing after startup and dropping privileges in the calling process.  
 Libptytty is written in C++, but it also offers a C-only API.
 
-%package devel
-Summary: Development headers for libptytty
-Requires: %{name}%{?_isa} = %{version}-%{release}
+%package -n %{libpackage}
+Summary:	libptytty is a small library that offers pseudo-tty management in an OS-independent way.
+Group:		System/Libraries
 
-%description devel
-Development packages for libptytty.
+
+%package -n %{devpackage}
+Summary:	Development files for libptytty
+Group:		System/Libraries
+Requires:	%{libpackage} = %{EVRD}
+
+%description -n %{devpackage}
+Development files for libptytty.
 
 %prep
 %autosetup -p1
@@ -34,12 +44,12 @@ Development packages for libptytty.
 %install
 %make_install -C build
 
-%files
+%files -n %{libpackage}
 %{!?_licensedir:%global license %%doc}
 %license COPYING
-%{_libdir}/*.so.*
+%{_libdir}/*.so.%{major}*
 
-%files devel
+%files -n %{devpackage}
 %{_includedir}/*
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
