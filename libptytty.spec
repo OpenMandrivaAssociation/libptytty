@@ -30,7 +30,7 @@ Development packages for libptytty.
 
 %build
 %cmake -G Ninja
-%make_build
+%ninja_build
 
 %install
 %ninja_install
