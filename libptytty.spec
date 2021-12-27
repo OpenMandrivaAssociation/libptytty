@@ -30,10 +30,10 @@ Development packages for libptytty.
 
 %build
 %cmake -G Ninja
-%ninja_build
+%ninja -C build
 
 %install
-%ninja_install
+%ninja_install -C build
 
 %files
 %{!?_licensedir:%global license %%doc}
