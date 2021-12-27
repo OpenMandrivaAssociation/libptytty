@@ -10,7 +10,6 @@ Source0: http://dist.schmorp.de/%{name}/%{name}-%{version}.tar.gz
 BuildRequires: cmake
 BuildRequires: gnupg2
 BuildRequires: git
-BuildRequires: ninja
 
 %description
 libptytty is a small library that offers pseudo-tty management in an OS-independent way.
@@ -29,11 +28,11 @@ Development packages for libptytty.
 %autosetup -p1
 
 %build
-%cmake -G Ninja
-%ninja -C build
+%cmake
+%make_build
 
 %install
-%ninja_install -C build
+%make_install -C build
 
 %files
 %{!?_licensedir:%global license %%doc}
