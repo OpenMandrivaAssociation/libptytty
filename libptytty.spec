@@ -4,7 +4,7 @@
 
 Name: libptytty
 Version: 2.0
-Release: 1
+Release: 2
 Summary: OS independent and secure pty/tty and utmp/wtmp/lastlog handling
 License: GPLv2+
 Group: Terminals
