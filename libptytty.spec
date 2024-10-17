@@ -8,7 +8,7 @@ Release: 2
 Summary: OS independent and secure pty/tty and utmp/wtmp/lastlog handling
 License: GPLv2+
 Group: Terminals
-URL: http://software.schmorp.de/
+URL: https://software.schmorp.de/
 Source0: http://dist.schmorp.de/%{name}/%{name}-%{version}.tar.gz
 
 BuildRequires: cmake
